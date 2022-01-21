@@ -8,17 +8,17 @@ import (
 
 type BaseResponseNonData struct {
 	Meta struct {
-		Code    int    `json:"code"`
-		Message string `json:"message"`
-	} `json:"meta"`
+		Code    int    `json:"Code"`
+		Message string `json:"Message"`
+	} `json:"Meta"`
 }
 
 type BaseResponseWithData struct {
 	Meta struct {
-		Code    int    `json:"code"`
-		Message string `json:"message"`
-	} `json:"meta"`
-	Data interface{} `json:"data"`
+		Code    int    `json:"Code"`
+		Message string `json:"Message"`
+	} `json:"Meta"`
+	Data interface{} `json:"Data"`
 }
 
 func SuccessNonDataResponse(c echo.Context, message string) error {
