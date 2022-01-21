@@ -6,6 +6,9 @@ info:
   contact:
     name: Sahril Mahendra
     email: sahrilmahendra@gmail.com
+externalDocs:
+  description: "GitHub Repository of Backend Test Tix.id"
+  url: https://github.com/project-capstone
 tags:
   - name: Authentication
     description: Endpoint for verifying who a user is
@@ -125,7 +128,7 @@ components:
         - address
         - password
       properties:
-        name:
+        username:
           type: string
           minLength: 1
           pattern: "^0-9A-Za-z_.$"
@@ -170,7 +173,7 @@ components:
           properties:
             ID:
               type: integer
-            Name:
+            Username:
               type: string
             Email:
               type: string
@@ -193,7 +196,7 @@ components:
             properties:
               ID:
                 type: integer
-              Name:
+              Username:
                 type: string
               Email:
                 type: string
@@ -254,7 +257,7 @@ components:
           examples:
             newUser:
               value:
-                name: sahril
+                username: sahril
                 email: sahril@example.com
                 address: sidoarjo
                 password: sahril123
@@ -270,7 +273,7 @@ components:
           examples:
             newData:
               value:
-                name: updateusername
+                username: updateusername
                 email: sahril@update.com
                 address: surabaya
                 password: newpass
@@ -338,19 +341,19 @@ components:
               [
                 {
                   ID: 1,
-                  Name: try,
+                  Username: try,
                   Email: try@example.com,
                   Address: "Sidoarjo",
                 },
                 {
                   ID: 2,
-                  Name: test123,
+                  Username: test123,
                   Email: test123@example.com,
                   Address: "Bandung",
                 },
                 {
                   ID: 3,
-                  Name: coba123,
+                  Username: coba123,
                   Email: coba123@example.com,
                   Address: "Jakarta",
                 },
@@ -383,7 +386,12 @@ components:
           example:
             Meta: { Code: 200, Message: success operation }
             Data:
-              { ID: 1, Name: try, Email: try@example.com, Address: sidoarjo }
+              {
+                ID: 1,
+                Username: try,
+                Email: try@example.com,
+                Address: sidoarjo,
+              }
     getDataByIdFailed:
       description: Bad Request Response
       content:
